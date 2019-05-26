@@ -1,0 +1,14 @@
+.customButton {
+    background: #658027;
+    padding: 15px 40px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.customButton:disabled {
+    background: darkolivegreen;
+    color: black;
+}
