@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './app.module.css'
 import {NavLink, Route} from "react-router-dom";
 import UsersContainer from "./dndUsers/UI/UsersContainer";
-import WarGaming from "./wargaming/UI/WarGaming";
+import WarGamingContainer from "./wargaming/UI/WarGamingContainer";
 
 
 
@@ -14,7 +14,7 @@ function App() {
                 <NavLink  to={'/wargaming'}>WarGaming</NavLink>
             </div>
             <Route path={'/dndusers'} render={() => <UsersContainer/>}/>
-            <Route path={'/wargaming'} render={() => <WarGaming/>}/>
+            <Route path={'/wargaming'} render={() => <WarGamingContainer/>}/>
         </div>
     );
 }

@@ -5,74 +5,63 @@ import Button from "../Button/Button";
 
 
 const DialogSelector = (props) => {
+
+    let {selectElements, elements, search, filter} = props;
+    let {setUnSelectElement, onSaveSelectElements, setSelectElement,
+        showHideDialogSelector, setChangeSearch, setChangeFilter} = props;
+
+    let onCloseDialog = () => {
+        showHideDialogSelector();
+    };
+
+    let onChangeSearch = (e) => {
+        setChangeSearch(e.currentTarget.value)
+    };
+
+    let onSelectElements = (selectElementId, selectElementelement) => {
+        if (selectElements.map(se => se.id).indexOf(selectElementId) > -1) {
+            setUnSelectElement(selectElementId)
+        } else setSelectElement(selectElementId, selectElementelement);
+    };
+
+    let onChangeFilter = (e) => {
+        setChangeFilter(e.currentTarget.value)
+    };
+
     return <div className={styles.dialogSelector}>
-        <button className={styles.closeButton}>X</button>
+        <button className={styles.closeButton} onClick={onCloseDialog}>X</button>
         <div className={styles.header}>
             <span>Диалог выбора элементов</span>
         </div>
         <div className={styles.search}>
-            <label>Поиск<input/></label>
-            <label>Фильтр<select>
+            <label>Поиск<input value={search} onChange={onChangeSearch}/></label>
+            <label>Фильтр<select onChange={onChangeFilter} value={filter}>
                 <option value="">Без фильтра</option>
-                <option value="">Номер > 10</option>
-                <option value="">Номер > 100</option>
-                <option value="">Номер > 200</option>
+                <option value="10">Номер > 10</option>
+                <option value="100">Номер > 100</option>
+                <option value="200">Номер > 200</option>
             </select></label>
         </div>
         <div className={styles.elements}>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 1</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 2</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 3</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 4</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 5</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 6</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 7</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 8</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 9</span>
-            </div>
-            <div>
-                <input type={'checkbox'}/><span>Элемент 10</span>
-            </div>
+            {elements.map(e => <div key={e.id}>
+                <input type={'checkbox'} checked={selectElements.map(se => se.id).indexOf(e.id) > -1}
+                       onChange={() => onSelectElements(e.id, e.element)}
+                       disabled={selectElements.length >= 3}/><span>{e.element}</span>
+            </div>)
+            }
         </div>
-
-            <div>
-                Выбранные элементы на данный момент:
-            </div>
-            <div className={styles.selectElements}>
-                <div>
-                    <SelectElement/>
-                </div>
-                <div>
-                    <SelectElement/>
-                </div>
-                <div>
-                    <SelectElement/>
-                </div>
-            </div>
+        <div>
+            Выбранные элементы на данный момент:
+        </div>
+        <div className={styles.selectElements}>
+            {selectElements.map(e => <div key={e.id}>
+                <SelectElement element={e.element} id={e.id} setUnSelectElement={setUnSelectElement}/>
+            </div>)}
+        </div>
         <div className={styles.buttons}>
-            <Button>Сохранить</Button>
-            <Button>Отмена</Button>
-
+            <Button onClick={onSaveSelectElements}>Сохранить</Button>
+            <Button onClick={onCloseDialog}>Отмена</Button>
         </div>
-
-
     </div>
 };
 

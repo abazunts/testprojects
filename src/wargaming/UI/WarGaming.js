@@ -1,17 +1,18 @@
 import React from 'react';
-import MainPage from "./MainPage/MainPage";
-import DialogSelector from "./DialogSelector/DialogSelector";
 import styles from './wargaming.module.css'
+import MainPageContainer from "./MainPage/MainPageContainer";
+import DialogSelectorContainer from "./DialogSelector/DialogSelectorContainer";
 
 
-const WarGaming = (props) => {
+const WarGaming = ({dialogSelectorShowHide}) => {
     return <div className={styles.warGaming}>
         <div>
-            <MainPage/>
+            <MainPageContainer/>
         </div>
+        {dialogSelectorShowHide &&
         <div className={styles.dialogSelector}>
-            <DialogSelector/>
-        </div>
+            <DialogSelectorContainer/>
+        </div>}
     </div>
 };
 

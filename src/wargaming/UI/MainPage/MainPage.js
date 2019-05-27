@@ -4,19 +4,20 @@ import styles from './mainPage.module.css';
 import Button from "../Button/Button";
 
 
-const MainPage = ({elements = []}) => {
+const MainPage = (props) => {
+
+    let {selectElements = [], showHideDialogSelector, selectButton, setUnSelectElement} = props;
+
     return <div className={styles.mainPage}>
-                <span>На данный момент у Вас выбрано {elements.length} элемент[а]:</span>
+        <span>На данный момент у Вас выбрано {selectElements.length} элемент[а]:</span>
         <div className={styles.selectElement}>
-            <div>
-                <SelectElement/>
-            </div>
-            <div>
-                <SelectElement/>
-            </div>
+
+            {selectElements.map(e => <div key={e.id}>
+                <SelectElement element={e.element} selectButton={selectButton} id={e.id} setUnSelectElement={setUnSelectElement}/>
+            </div>)}
         </div>
         <div className={styles.customButton}>
-            <Button>Изменить мой выбор</Button>
+            <Button onClick={showHideDialogSelector} disabled={selectButton}>Изменить мой выбор</Button>
         </div>
     </div>
 };
