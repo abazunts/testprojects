@@ -1,5 +1,6 @@
 export const selectElementsSelector = state => state.mainPage.selectElements;
 export const searchSelector = state => state.mainPage.search;
+export const filterSelector = state => state.mainPage.filter;
 export const elementsSelector = state => {
     let newElements = [...state.mainPage.elements];
     if (state.mainPage.search) {

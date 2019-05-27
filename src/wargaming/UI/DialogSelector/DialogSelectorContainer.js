@@ -2,10 +2,9 @@ import React from 'react';
 import DialogSelector from "./DialogSelector";
 import {connect} from "react-redux";
 import {setFilter, setSearch, setSelectElementsGlobalState, showHideDialogSelector} from "../../BLL/mainPageReducer";
-import {elementsSelector, searchSelector, selectElementsSelector} from "./dialogSelectors";
+import {elementsSelector, filterSelector, searchSelector, selectElementsSelector} from "./dialogSelectors";
 
 class DialogSelectorContainer extends React.Component {
-
     constructor(props){
         super(props);
         this.state = {
@@ -37,6 +36,7 @@ class DialogSelectorContainer extends React.Component {
                                setUnSelectElement = {this.setUnSelectElement}
                                onSaveSelectElements = {this.onSaveSelectElements}
                                search = {this.props.search}
+                               filter = {this.props.filter}
                                setChangeSearch = {this.props.setSearch}
                                setChangeFilter = {this.props.setFilter}
         />
@@ -48,6 +48,7 @@ let mapStateToProps = (state) => {
         selectElements: selectElementsSelector(state),
         elements: elementsSelector(state),
         search: searchSelector(state),
+        filter: filterSelector(state),
     }
 }
 

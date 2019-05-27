@@ -40,6 +40,8 @@ let mainPageReducer = (state = initState, action) => {
                 ...state,
                 dialogSelectorShowHide: !state.dialogSelectorShowHide,
                 selectButton: !state.selectButton,
+                search: '',
+                filter: '',
             };
         case SET_SELECT_ELEMENT:
             return {
@@ -47,6 +49,8 @@ let mainPageReducer = (state = initState, action) => {
                 selectElements: action.selectElements,
                 dialogSelectorShowHide: !state.dialogSelectorShowHide,
                 selectButton: !state.selectButton,
+                search: '',
+                filter: '',
             };
         case SET_UN_SELECT_ELEMENT:
             let newSelectElements = [...state.selectElements];
