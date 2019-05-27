@@ -1,9 +1,7 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk";
-import usersReducer from "./usersReducer";
-import mainPageReducer from "../../wargaming/BLL/mainPageReducer";
-
-
+import usersReducer from "../dndUsers/BLL/usersReducer";
+import mainPageReducer from "../wargaming/BLL/mainPageReducer";
 
 const reducers = combineReducers({
     users: usersReducer,

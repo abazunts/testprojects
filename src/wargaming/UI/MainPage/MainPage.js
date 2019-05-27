@@ -9,7 +9,11 @@ const MainPage = (props) => {
     let {selectElements = [], showHideDialogSelector, selectButton, setUnSelectElement} = props;
 
     return <div className={styles.mainPage}>
-        <span>На данный момент у Вас выбрано {selectElements.length} элемент[а]:</span>
+        <span>На данный момент у Вас выбрано {selectElements.length}
+        {selectElements.length === 0 && <span> элементов:</span>}
+        {selectElements.length === 1 && <span> элемент:</span>}
+        {selectElements.length > 1 && <span> элемента</span>}
+        </span>
         <div className={styles.selectElement}>
 
             {selectElements.map(e => <div key={e.id}>

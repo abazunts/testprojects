@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b78a4199-6f6f-436e-bec8-218948363a14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/wargaming/BLL/mainPageReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelectorContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelectors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/MainPage/mainPageSelector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/WarGamingContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wargaming/UI/warGamingSelector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dndUsers/BLL/storednd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dndUsers/BLL/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dndUsers/UI/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dndUsers/UI/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dndUsers/BLL/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/REDUX/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wargaming/UI/Button/button.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/Button/button.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wargaming/UI/SelectElement/SelectElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/SelectElement/SelectElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wargaming/UI/WarGaming.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wargaming/UI/WarGaming.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,14 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelector.js">
+        <entry file="file://$PROJECT_DIR$/src/wargaming/UI/Button/button.module.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -70,13 +64,15 @@
         <option value="$PROJECT_DIR$/src/dndUsers/UI/UsersContainer.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/WarGamingContainer.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPageContainer.js" />
-        <option value="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css" />
-        <option value="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/SelectElement/SelectElement.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelectorContainer.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelectors.js" />
         <option value="$PROJECT_DIR$/src/wargaming/BLL/mainPageReducer.js" />
         <option value="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelector.js" />
+        <option value="$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js" />
+        <option value="$PROJECT_DIR$/src/REDUX/store.js" />
+        <option value="$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css" />
+        <option value="$PROJECT_DIR$/src/wargaming/UI/Button/button.module.css" />
       </list>
     </option>
   </component>
@@ -122,7 +118,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="wargaming" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="DialogSelector" type="462c0819:PsiDirectoryNode" />
+              <item name="Button" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,6 +138,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\react\testprojects\testprojects.git\src\REDUX" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\react\testprojects\testprojects.git\src\wargaming\UI\DialogSelector" />
       <recent name="D:\react\testprojects\testprojects.git\src\wargaming\UI\MainPage" />
@@ -172,12 +171,12 @@
       <updated>1558928733945</updated>
       <workItem from="1558928735120" duration="10796000" />
       <workItem from="1558940002781" duration="697000" />
-      <workItem from="1558940876614" duration="6540000" />
+      <workItem from="1558940876614" duration="9452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18033000" />
+    <option name="totallyTimeSpent" value="20945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -245,15 +244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dndUsers/BLL/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#1#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dndUsers/UI/UsersContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -273,36 +263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2019-05-26 23.07.21.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/BLL/mainPageReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelectorContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelectors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -310,44 +270,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/SelectElement/SelectElement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wargaming/UI/WarGaming.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/warGamingSelector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="66" selection-start-column="66" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/WarGamingContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -368,6 +294,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/MainPage/MainPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="61" lean-forward="true" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/SelectElement/SelectElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelectorContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="36" column="75" lean-forward="true" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/DialogSelector.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -375,6 +331,57 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/REDUX/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/warGamingSelector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="52" selection-start-column="52" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/WarGamingContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/BLL/mainPageReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2019-05-26 23.07.21.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/DialogSelector/dialogSelector.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wargaming/UI/Button/button.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
