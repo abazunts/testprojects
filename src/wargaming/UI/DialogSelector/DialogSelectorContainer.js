@@ -12,14 +12,15 @@ class DialogSelectorContainer extends React.Component {
         }
     };
 
-    setSelectElement = (selectElementId, selectElementelement) => {
-        this.setState({selectElements: [...this.state.selectElements, {id: selectElementId, element: selectElementelement}]})
+    setSelectElement = (selectElementId, selectElement) => {
+        this.setState({selectElements: [...this.state.selectElements, {id: selectElementId, element: selectElement}]})
     };
 
     setUnSelectElement = (id) => {
         let newSelectElements = [...this.state.selectElements];
-        for (let i = 0; i < newSelectElements.length; i++)
+        for (let i = 0; i < newSelectElements.length; i++) {
             newSelectElements[i].id === id && newSelectElements.splice(i, 1);
+        }
         this.setState({selectElements: newSelectElements});
     };
 

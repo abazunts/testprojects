@@ -7,8 +7,11 @@ import Button from "../Button/Button";
 const DialogSelector = (props) => {
 
     let {selectElements, elements, search, filter} = props;
-    let {setUnSelectElement, onSaveSelectElements, setSelectElement,
-        showHideDialogSelector, setChangeSearch, setChangeFilter} = props;
+    let {
+        setUnSelectElement, onSaveSelectElements, setSelectElement,
+        showHideDialogSelector, setChangeSearch, setChangeFilter
+    } = props;
+
 
     let onCloseDialog = () => {
         showHideDialogSelector();
@@ -18,14 +21,16 @@ const DialogSelector = (props) => {
         setChangeSearch(e.currentTarget.value)
     };
 
-    let onSelectElements = (selectElementId, selectElementelement) => {
-        if (selectElements.map(se => se.id).indexOf(selectElementId) > -1) {
-            setUnSelectElement(selectElementId)
-        } else setSelectElement(selectElementId, selectElementelement);
-    };
-
     let onChangeFilter = (e) => {
         setChangeFilter(e.currentTarget.value)
+    };
+
+    let onClickElement = (e) => {
+        if (e.target.tagName === 'INPUT') {
+            selectElements.map(se => se.id).indexOf(e.target.dataset.id)
+                ? setSelectElement(e.target.dataset.id, e.target.dataset.element)
+                : setUnSelectElement(e.target.dataset.id)
+        }
     };
 
     return <div className={styles.dialogSelector}>
@@ -42,11 +47,11 @@ const DialogSelector = (props) => {
                 <option value="200">Номер > 200</option>
             </select></label>
         </div>
-        <div className={styles.elements}>
-            {elements.map(e => <div key={e.id}>
-                <input type={'checkbox'} checked={selectElements.map(se => se.id).indexOf(e.id) > -1}
-                       onChange={() => onSelectElements(e.id, e.element)}
-                       disabled={selectElements.length >= 3}/><span>{e.element}</span>
+        <div className={styles.elements} onClick={onClickElement}>
+            {elements.map(el => <div key={el.id}>
+                <input type={'checkbox'} checked={selectElements.map(sel => sel.id).indexOf(el.id) > -1}
+                       data-id={el.id} data-element={el.element}
+                       disabled={selectElements.length >= 3}/><span>{el.element}</span>
             </div>)
             }
         </div>
@@ -54,8 +59,8 @@ const DialogSelector = (props) => {
             Выбранные элементы на данный момент:
         </div>
         <div className={styles.selectElements}>
-            {selectElements.map(e => <div key={e.id}>
-                <SelectElement element={e.element} id={e.id} setUnSelectElement={setUnSelectElement}/>
+            {selectElements.map(el => <div key={el.id}>
+                <SelectElement element={el.element} id={el.id} setUnSelectElement={setUnSelectElement}/>
             </div>)}
         </div>
         <div className={styles.buttons}>

@@ -29,7 +29,7 @@ let mainPageReducer = (state = initState, action) => {
         case CREATE_ELEMENTS:
             let newElements = [];
             for (let i = 1; i <= 300; i++) {
-                newElements.push({id: i, element: 'Элемент ' + i})
+                newElements.push({id: String(i), element: 'Элемент ' + i})
             }
             return {
                 ...state,
@@ -40,8 +40,6 @@ let mainPageReducer = (state = initState, action) => {
                 ...state,
                 dialogSelectorShowHide: !state.dialogSelectorShowHide,
                 selectButton: !state.selectButton,
-                search: '',
-                filter: '',
             };
         case SET_SELECT_ELEMENT:
             return {
@@ -49,8 +47,6 @@ let mainPageReducer = (state = initState, action) => {
                 selectElements: action.selectElements,
                 dialogSelectorShowHide: !state.dialogSelectorShowHide,
                 selectButton: !state.selectButton,
-                search: '',
-                filter: '',
             };
         case SET_UN_SELECT_ELEMENT:
             let newSelectElements = [...state.selectElements];
