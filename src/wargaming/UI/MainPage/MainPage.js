@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 
 const MainPage = (props) => {
 
-    let {selectElements = [], showHideDialogSelector, selectButton, setUnSelectElement} = props;
+    let {selectElements = [], openCloseDialogSelector, selectButtonEnabled, setUnSelectElement} = props;
 
     return <div className={styles.mainPage}>
         <span>На данный момент у Вас выбрано {selectElements.length}
@@ -17,11 +17,11 @@ const MainPage = (props) => {
         <div className={styles.selectElement}>
 
             {selectElements.map(e => <div key={e.id}>
-                <SelectElement element={e.element} selectButton={selectButton} id={e.id} setUnSelectElement={setUnSelectElement}/>
+                <SelectElement element={e.element} selectButton={selectButtonEnabled} id={e.id} setUnSelectElement={setUnSelectElement}/>
             </div>)}
         </div>
         <div className={styles.customButton}>
-            <Button onClick={showHideDialogSelector} disabled={selectButton}>Изменить мой выбор</Button>
+            <Button onClick={openCloseDialogSelector} disabled={selectButtonEnabled}>Изменить мой выбор</Button>
         </div>
     </div>
 };

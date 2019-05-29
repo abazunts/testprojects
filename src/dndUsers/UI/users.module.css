@@ -52,11 +52,11 @@
     padding: 5px;
 }
 
-.usersTitle {
+.users > h2 {
     background: brown;
 }
 
-.adminsTitle {
+.admins > h2 {
     background: darkgreen;
 }
 

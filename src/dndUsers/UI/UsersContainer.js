@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Users from "./Users";
-import {setAdmins, setUsers} from "../BLL/usersReducer";
+import {userMoving, adminMoving} from "../BLL/usersReducer";
 import {adminsSelector, usersSelector} from "../BLL/selectors";
 
 
@@ -11,4 +11,4 @@ let mapStateToProps = (state) => {
     })
 };
 
-export default connect(mapStateToProps, {setUsers, setAdmins})(Users);
+export default connect(mapStateToProps, {userMoving, adminMoving})(Users);

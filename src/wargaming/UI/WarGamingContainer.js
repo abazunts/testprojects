@@ -10,12 +10,12 @@ class WarGamingContainer extends React.Component {
     }
 
     render() {
-        return <WarGaming dialogSelectorShowHide={this.props.dialogSelectorShowHide}/>
+        return <WarGaming dialogSelectorShowHide={this.props.dialogSelectorShow}/>
     }
 }
 let mapSateToProps = (state) => {
     return {
-        dialogSelectorShowHide: dialogSelectorShowSelector(state),
+        dialogSelectorShow: dialogSelectorShowSelector(state),
     }
 };
 

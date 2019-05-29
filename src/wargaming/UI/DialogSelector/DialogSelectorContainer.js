@@ -1,11 +1,15 @@
 import React from 'react';
 import DialogSelector from "./DialogSelector";
 import {connect} from "react-redux";
-import {setFilter, setSearch, setSelectElementsGlobalState, showHideDialogSelector} from "../../BLL/mainPageReducer";
+import {
+    openCloseDialogSelector,
+    setFilter,
+    setSearch, setSelectElements,
+} from "../../BLL/mainPageReducer";
 import {elementsSelector, filterSelector, searchSelector, selectElementsSelector} from "./dialogSelectors";
 
 class DialogSelectorContainer extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             selectElements: this.props.selectElements,
@@ -25,21 +29,20 @@ class DialogSelectorContainer extends React.Component {
     };
 
     onSaveSelectElements = () => {
-        this.props.setSelectElementsGlobalState(this.state.selectElements)
+        this.props.setSelectElements(this.state.selectElements)
     };
 
-
     render() {
-        return <DialogSelector selectElements = {this.state.selectElements}
-                               showHideDialogSelector = {this.props.showHideDialogSelector}
-                               elements = {this.props.elements}
-                               setSelectElement = {this.setSelectElement}
-                               setUnSelectElement = {this.setUnSelectElement}
-                               onSaveSelectElements = {this.onSaveSelectElements}
-                               search = {this.props.search}
-                               filter = {this.props.filter}
-                               setChangeSearch = {this.props.setSearch}
-                               setChangeFilter = {this.props.setFilter}
+        return <DialogSelector selectElements={this.state.selectElements}
+                               closeDialogSelector={this.props.openCloseDialogSelector}
+                               elements={this.props.elements}
+                               setSelectElement={this.setSelectElement}
+                               setUnSelectElement={this.setUnSelectElement}
+                               onSaveSelectElements={this.onSaveSelectElements}
+                               search={this.props.search}
+                               filter={this.props.filter}
+                               setChangeSearch={this.props.setSearch}
+                               setChangeFilter={this.props.setFilter}
         />
     }
 }
@@ -51,7 +54,12 @@ let mapStateToProps = (state) => {
         search: searchSelector(state),
         filter: filterSelector(state),
     }
-}
+};
 
 
-export default connect(mapStateToProps, {showHideDialogSelector, setSelectElementsGlobalState, setSearch, setFilter})(DialogSelectorContainer);
+export default connect(mapStateToProps, {
+    openCloseDialogSelector,
+    setSelectElements,
+    setSearch,
+    setFilter
+})(DialogSelectorContainer);

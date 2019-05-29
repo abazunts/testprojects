@@ -1,13 +1,13 @@
 import {connect} from "react-redux";
 import MainPage from "./MainPage";
-import {selectButtonSelector, selectElementsSelector} from "./mainPageSelector";
-import {setUnSelectElement, showHideDialogSelector} from "../../BLL/mainPageReducer";
+import {selectButtonEnabledSelector, selectElementsSelector} from "./mainPageSelector";
+import {setUnSelectElement, openCloseDialogSelector} from "../../BLL/mainPageReducer";
 
 let mapStateToProps = (state) => {
     return {
         selectElements: selectElementsSelector(state),
-        selectButton: selectButtonSelector(state),
+        selectButtonEnabled: selectButtonEnabledSelector(state),
     }
 }
 
-export default connect(mapStateToProps, {showHideDialogSelector, setUnSelectElement})(MainPage);
+export default connect(mapStateToProps, {openCloseDialogSelector, setUnSelectElement})(MainPage);

@@ -1,9 +1,10 @@
-const DIALOG_SELECTOR_SHOW_HIDE = 'WG/DIALOG_SELECTOR/DIALOG_SELECTOR_SHOW_HIDE';
+const DIALOG_SELECTOR_SHOW = 'WG/DIALOG_SELECTOR/DIALOG_SELECTOR_SHOW';
 const CREATE_ELEMENTS = 'WG/DIALOG_SELECTOR/CREATE_ELEMENTS';
-const SET_SELECT_ELEMENT = 'WG/DIALOG_SELECTOR/SET_SELECT_ELEMENT';
+const SET_SELECT_ELEMENTS = 'WG/DIALOG_SELECTOR/SET_SELECT_ELEMENTS';
 const SET_UN_SELECT_ELEMENT = 'WG/DIALOG_SELECTOR/SET_UN_SELECT_ELEMENT';
 const SET_SEARCH = 'WG/DIALOG_SELECTOR/SET_SEARCH';
 const SET_FILTER = 'WG/DIALOG_SELECTOR/SET_FILTER';
+const SELECT_BUTTON_ENABLED = 'WG/DIALOG_SELECTOR/SELECT_BUTTON_ENABLED';
 
 let initState = {
     elements: [
@@ -17,8 +18,8 @@ let initState = {
 
     selectElements: [],
 
-    dialogSelectorShowHide: false,
-    selectButton: false,
+    dialogSelectorShow: false,
+    selectButtonEnabled: false,
     search: '',
     filter: '',
 };
@@ -31,53 +32,47 @@ let mainPageReducer = (state = initState, action) => {
             for (let i = 1; i <= 300; i++) {
                 newElements.push({id: String(i), element: 'Элемент ' + i})
             }
-            return {
-                ...state,
-                elements: newElements,
-            };
-        case DIALOG_SELECTOR_SHOW_HIDE:
-            return {
-                ...state,
-                dialogSelectorShowHide: !state.dialogSelectorShowHide,
-                selectButton: !state.selectButton,
-            };
-        case SET_SELECT_ELEMENT:
-            return {
-                ...state,
-                selectElements: action.selectElements,
-                dialogSelectorShowHide: !state.dialogSelectorShowHide,
-                selectButton: !state.selectButton,
-            };
+            return {...state, elements: newElements};
+        case DIALOG_SELECTOR_SHOW:
+            return {...state, dialogSelectorShow: !state.dialogSelectorShow};
+        case SELECT_BUTTON_ENABLED:
+            return {...state, selectButtonEnabled: !state.selectButtonEnabled};
+        case SET_SELECT_ELEMENTS:
+            return {...state, selectElements: action.selectElements};
         case SET_UN_SELECT_ELEMENT:
             let newSelectElements = [...state.selectElements];
-            for (let i = 0; i < newSelectElements.length; i++)
+            for (let i = 0; i < newSelectElements.length; i++) {
                 newSelectElements[i].id === action.id && newSelectElements.splice(i, 1);
-            return {
-                ...state,
-                selectElements: newSelectElements,
-            };
-
+            }
+            return {...state, selectElements: newSelectElements,};
         case SET_SEARCH:
-            return {
-                ...state,
-                search: action.value,
-            };
+            return {...state, search: action.value,};
         case SET_FILTER:
-            return {
-                ...state,
-                filter: action.value,
-            };
+            return {...state, filter: action.value,};
         default:
             return state
     }
 };
 
-export const showHideDialogSelector = () => ({type: DIALOG_SELECTOR_SHOW_HIDE});
+export const showDialogSelector = () => ({type: DIALOG_SELECTOR_SHOW});
+export const selectButtonEnabled = () => ({type: SELECT_BUTTON_ENABLED});
 export const elementsCreate = () => ({type: CREATE_ELEMENTS});
-export const setSelectElementsGlobalState = (selectElements) => ({type: SET_SELECT_ELEMENT, selectElements});
+export const setSelectElementsGlobalState = (selectElements) => ({type: SET_SELECT_ELEMENTS, selectElements});
 export const setUnSelectElement = (id) => ({type: SET_UN_SELECT_ELEMENT, id});
 export const setSearch = (value) => ({type: SET_SEARCH, value});
 export const setFilter = (value) => ({type: SET_FILTER, value});
+
+
+export const openCloseDialogSelector = () => (dispatch) => {
+    dispatch(showDialogSelector());
+    dispatch(selectButtonEnabled());
+};
+
+export const setSelectElements = (selectElements) => (dispatch) => {
+    dispatch(setSelectElementsGlobalState(selectElements));
+    dispatch(showDialogSelector());
+    dispatch(selectButtonEnabled());
+}
 
 
 export default mainPageReducer;

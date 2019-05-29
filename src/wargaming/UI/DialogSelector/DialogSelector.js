@@ -9,13 +9,9 @@ const DialogSelector = (props) => {
     let {selectElements, elements, search, filter} = props;
     let {
         setUnSelectElement, onSaveSelectElements, setSelectElement,
-        showHideDialogSelector, setChangeSearch, setChangeFilter
+        closeDialogSelector, setChangeSearch, setChangeFilter
     } = props;
 
-
-    let onCloseDialog = () => {
-        showHideDialogSelector();
-    };
 
     let onChangeSearch = (e) => {
         setChangeSearch(e.currentTarget.value)
@@ -27,14 +23,14 @@ const DialogSelector = (props) => {
 
     let onClickElement = (e) => {
         if (e.target.tagName === 'INPUT') {
-            selectElements.map(se => se.id).indexOf(e.target.dataset.id)
+            selectElements.map(sel => sel.id).indexOf(e.target.dataset.id)
                 ? setSelectElement(e.target.dataset.id, e.target.dataset.element)
                 : setUnSelectElement(e.target.dataset.id)
         }
     };
 
     return <div className={styles.dialogSelector}>
-        <button className={styles.closeButton} onClick={onCloseDialog}>X</button>
+        <button className={styles.closeButton} onClick={closeDialogSelector}>X</button>
         <div className={styles.header}>
             <span>Диалог выбора элементов</span>
         </div>
@@ -55,9 +51,7 @@ const DialogSelector = (props) => {
             </div>)
             }
         </div>
-        <div>
-            Выбранные элементы на данный момент:
-        </div>
+        <div>Выбранные элементы на данный момент:</div>
         <div className={styles.selectElements}>
             {selectElements.map(el => <div key={el.id}>
                 <SelectElement element={el.element} id={el.id} setUnSelectElement={setUnSelectElement}/>
@@ -65,7 +59,7 @@ const DialogSelector = (props) => {
         </div>
         <div className={styles.buttons}>
             <Button onClick={onSaveSelectElements}>Сохранить</Button>
-            <Button onClick={onCloseDialog}>Отмена</Button>
+            <Button onClick={closeDialogSelector}>Отмена</Button>
         </div>
     </div>
 };

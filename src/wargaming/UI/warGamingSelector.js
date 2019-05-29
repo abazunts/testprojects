@@ -1,1 +1,1 @@
-export const dialogSelectorShowSelector = state => state.mainPage.dialogSelectorShowHide;
+export const dialogSelectorShowSelector = state => state.mainPage.dialogSelectorShow;
