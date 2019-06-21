@@ -16,8 +16,8 @@ const MainPage = (props) => {
         </span>
         <div className={styles.selectElement}>
 
-            {selectElements.map(e => <div key={e.id}>
-                <SelectElement element={e.element} selectButton={selectButtonEnabled} id={e.id} setUnSelectElement={setUnSelectElement}/>
+            {Object.keys(selectElements).map(e => <div key={selectElements[e].id}>
+                <SelectElement item={selectElements[e].item} selectButton={selectButtonEnabled} id={selectElements[e].id} setUnSelectElement={setUnSelectElement}/>
             </div>)}
         </div>
         <div className={styles.customButton}>

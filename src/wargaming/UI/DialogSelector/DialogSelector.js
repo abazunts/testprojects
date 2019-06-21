@@ -6,13 +6,13 @@ import Button from "../Button/Button";
 
 const DialogSelector = (props) => {
 
-    let {selectElements, elements, search, filter} = props;
+    let {selectElements, items, search, filter} = props;
     let {
         setUnSelectElement, onSaveSelectElements, setSelectElement,
         closeDialogSelector, setChangeSearch, setChangeFilter
     } = props;
 
-
+debugger
     let onChangeSearch = (e) => {
         setChangeSearch(e.currentTarget.value)
     };
@@ -23,12 +23,11 @@ const DialogSelector = (props) => {
 
     let onClickElement = (e) => {
         if (e.target.tagName === 'INPUT') {
-            selectElements.map(sel => sel.id).indexOf(e.target.dataset.id)
-                ? setSelectElement(e.target.dataset.id, e.target.dataset.element)
-                : setUnSelectElement(e.target.dataset.id)
+            e.target.dataset.id in selectElements
+                ? setUnSelectElement(e.target.dataset.id)
+                : setSelectElement(e.target.dataset.id)
         }
     };
-
     return <div className={styles.dialogSelector}>
         <button className={styles.closeButton} onClick={closeDialogSelector}>X</button>
         <div className={styles.header}>
@@ -44,17 +43,18 @@ const DialogSelector = (props) => {
             </select></label>
         </div>
         <div className={styles.elements} onClick={onClickElement}>
-            {elements.map(el => <div key={el.id}>
-                <input type={'checkbox'} checked={selectElements.map(sel => sel.id).indexOf(el.id) > -1}
-                       data-id={el.id} data-element={el.element}
-                       disabled={selectElements.length >= 3}/><span>{el.element}</span>
+            {Object.keys(items).map(el => <div key={items[el].id}>
+                <input type={'checkbox'}
+                       checked={items[el].id in selectElements} data-id={items[el].id} readOnly
+                       disabled={Object.keys(selectElements).length >= 3}/><span>{items[el].item}</span>
             </div>)
             }
         </div>
         <div>Выбранные элементы на данный момент:</div>
         <div className={styles.selectElements}>
-            {selectElements.map(el => <div key={el.id}>
-                <SelectElement element={el.element} id={el.id} setUnSelectElement={setUnSelectElement}/>
+            {Object.keys(selectElements).map(el => <div key={selectElements[el].id}>
+                <SelectElement item={selectElements[el].item} id={selectElements[el].id}
+                               setUnSelectElement={setUnSelectElement}/>
             </div>)}
         </div>
         <div className={styles.buttons}>

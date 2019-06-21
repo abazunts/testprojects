@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './selectElement.module.css'
 
-const SelectElement = ({id, element, setUnSelectElement, selectButton = false}) => {
+const SelectElement = ({id, item, setUnSelectElement, selectButton = false}) => {
     return <div className={styles.selectElement}>
-            <span>{element}</span>
+            <span>{item}</span>
             <button onClick={()=>setUnSelectElement(id)} disabled={selectButton}>X</button>
     </div>
 };

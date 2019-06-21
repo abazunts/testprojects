@@ -16,15 +16,15 @@ class DialogSelectorContainer extends React.Component {
         }
     };
 
-    setSelectElement = (selectElementId, selectElement) => {
-        this.setState({selectElements: [...this.state.selectElements, {id: selectElementId, element: selectElement}]})
+    setSelectElement = (selectElementId) => {
+        let newSelectElements = {...this.state.selectElements};
+        newSelectElements[selectElementId] = this.props.items[selectElementId];
+        this.setState({selectElements: newSelectElements})
     };
 
     setUnSelectElement = (id) => {
-        let newSelectElements = [...this.state.selectElements];
-        for (let i = 0; i < newSelectElements.length; i++) {
-            newSelectElements[i].id === id && newSelectElements.splice(i, 1);
-        }
+        let newSelectElements = {...this.state.selectElements};
+        delete newSelectElements[id];
         this.setState({selectElements: newSelectElements});
     };
 
@@ -32,10 +32,12 @@ class DialogSelectorContainer extends React.Component {
         this.props.setSelectElements(this.state.selectElements)
     };
 
+
+
     render() {
         return <DialogSelector selectElements={this.state.selectElements}
                                closeDialogSelector={this.props.openCloseDialogSelector}
-                               elements={this.props.elements}
+                               items={this.props.items}
                                setSelectElement={this.setSelectElement}
                                setUnSelectElement={this.setUnSelectElement}
                                onSaveSelectElements={this.onSaveSelectElements}
@@ -50,7 +52,7 @@ class DialogSelectorContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         selectElements: selectElementsSelector(state),
-        elements: elementsSelector(state),
+        items: elementsSelector(state),
         search: searchSelector(state),
         filter: filterSelector(state),
     }
@@ -63,3 +65,4 @@ export default connect(mapStateToProps, {
     setSearch,
     setFilter
 })(DialogSelectorContainer);
+

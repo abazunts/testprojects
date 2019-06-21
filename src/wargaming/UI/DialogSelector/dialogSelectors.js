@@ -2,12 +2,26 @@ export const selectElementsSelector = state => state.mainPage.selectElements;
 export const searchSelector = state => state.mainPage.search;
 export const filterSelector = state => state.mainPage.filter;
 export const elementsSelector = state => {
-    let newElements = [...state.mainPage.elements];
+    let newElements = {...state.mainPage.items};
+    let elements= {};
     if (state.mainPage.search) {
-        newElements = newElements.filter(el => el.element.indexOf(state.mainPage.search) > -1);
+        Object.keys(newElements).map(key => {
+            if(newElements[Number(key)].item.indexOf(state.mainPage.search) > -1) {
+                elements[key] = newElements[key]
+            }
+        });
+        newElements = elements;
     }
+
     if(state.mainPage.filter) {
-        newElements = newElements.filter(el => el.id > state.mainPage.filter )
+       Object.keys(newElements).map(key => {
+           if(Number(key) > state.mainPage.filter) {  elements[Number(key)] = newElements[key]}
+       });
+        newElements = elements;
+        debugger
     }
+
+
+
     return newElements;
 };

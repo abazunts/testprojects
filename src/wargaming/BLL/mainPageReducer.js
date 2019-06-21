@@ -7,16 +7,16 @@ const SET_FILTER = 'WG/DIALOG_SELECTOR/SET_FILTER';
 const SELECT_BUTTON_ENABLED = 'WG/DIALOG_SELECTOR/SELECT_BUTTON_ENABLED';
 
 let initState = {
-    elements: [
-        {id: 1, element: 'Элемент 1'},
-        {id: 2, element: 'Элемент 2'},
-        {id: 3, element: 'Элемент 3'},
-        {id: 4, element: 'Элемент 4'},
-        {id: 5, element: 'Элемент 5'},
-        {id: 6, element: 'Элемент 6'},
-    ],
+        items: {
+        1: {id: 1, item: 'Элемент 1'},
+        2: {id: 2, item: 'Элемент 2'},
+        3: {id: 3, item: 'Элемент 3'},
+        4: {id: 4, item: 'Элемент 4'},
+        5: {id: 5, item: 'Элемент 5'},
+        6: {id: 6, item: 'Элемент 6'},
+    },
 
-    selectElements: [],
+    selectElements: {},
 
     dialogSelectorShow: false,
     selectButtonEnabled: false,
@@ -29,10 +29,10 @@ let mainPageReducer = (state = initState, action) => {
     switch (action.type) {
         case CREATE_ELEMENTS:
             let newElements = [];
-            for (let i = 1; i <= 300; i++) {
-                newElements.push({id: String(i), element: 'Элемент ' + i})
+            for (let i = 0; i <= 300; i++) {
+                newElements[i] = {id: String(i), item: 'Элемент ' + i};
             }
-            return {...state, elements: newElements};
+            return {...state, items: newElements};
         case DIALOG_SELECTOR_SHOW:
             return {...state, dialogSelectorShow: !state.dialogSelectorShow};
         case SELECT_BUTTON_ENABLED:
@@ -40,10 +40,8 @@ let mainPageReducer = (state = initState, action) => {
         case SET_SELECT_ELEMENTS:
             return {...state, selectElements: action.selectElements};
         case SET_UN_SELECT_ELEMENT:
-            let newSelectElements = [...state.selectElements];
-            for (let i = 0; i < newSelectElements.length; i++) {
-                newSelectElements[i].id === action.id && newSelectElements.splice(i, 1);
-            }
+            let newSelectElements = {...state.selectElements};
+            delete newSelectElements[action.id];
             return {...state, selectElements: newSelectElements,};
         case SET_SEARCH:
             return {...state, search: action.value,};
