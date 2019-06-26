@@ -11,8 +11,7 @@ const DialogSelector = (props) => {
         setUnSelectElement, onSaveSelectElements, setSelectElement,
         closeDialogSelector, setChangeSearch, setChangeFilter
     } = props;
-
-debugger
+    
     let onChangeSearch = (e) => {
         setChangeSearch(e.currentTarget.value)
     };

@@ -16,3 +16,9 @@
     transform: rotate(0deg);
 }
 
+.wallField {
+    position: absolute;
+    border: 5px solid red;
+    border-radius: 15px;
+}
+

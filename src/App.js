@@ -3,7 +3,7 @@ import styles from './app.module.css'
 import {NavLink, Route} from "react-router-dom";
 import UsersContainer from "./dndUsers/UI/UsersContainer";
 import WarGamingContainer from "./wargaming/UI/WarGamingContainer";
-import PacMan from "./pacman/PacMan";
+import PacManContainer from "./pacman/PacManContainer";
 
 
 
@@ -17,7 +17,7 @@ function App() {
             </div>
             <Route path={'/dndusers'} render={() => <UsersContainer/>}/>
             <Route path={'/wargaming'} render={() => <WarGamingContainer/>}/>
-            <Route path={'/pacman'} render={() => <PacMan/>}/>
+            <Route path={'/pacman'} render={() => <PacManContainer/>}/>
         </div>
     );
 }
